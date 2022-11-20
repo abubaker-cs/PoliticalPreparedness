@@ -106,7 +106,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/821538fae1d0782927d1ca7319bbdb04/transformed/jetified-moshi-kotlin-1.14.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/a4335f58278b01a9d4dafaa58e88765a/transformed/jetified-moshi-adapters-1.14.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/e66e156699efbfe737827d09a4db7284/transformed/jetified-moshi-1.14.0.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/f08862ec1aabba331b6b9bfd612db6df/transformed/jetified-kotlin-stdlib-jdk8-1.7.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/0d04c7bc0b8c75aea4d109e04e18775b/transformed/jetified-kotlin-stdlib-jdk8-1.7.20.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/afbe24cc418d1a7050f5463451dd490f/transformed/jetified-kotlin-android-extensions-runtime-1.7.20.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/f6e4c1d6541a25a42638f086bb1bc0f5/transformed/jetified-kotlin-stdlib-jdk7-1.7.20.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d7ca3c8b0365999798b8034ac31c9a0d/transformed/jetified-kotlinx-serialization-runtime-jvm-1.0-M1-1.4.0-rc.jar</arg>
@@ -196,7 +196,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.lifecycle:lifecycle-common:2.5.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.7.20" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.7.20" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
