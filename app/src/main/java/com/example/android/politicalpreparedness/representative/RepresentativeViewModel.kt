@@ -53,7 +53,7 @@ class RepresentativeViewModel(private val savedHandle: SavedStateHandle) : ViewM
 
      */
 
-    //TODO: Create function get address from geo location
+    //DONE: Create function get address from geo location
     fun getRepresentativesList(address: Address?) {
 
         _apiStatus.value = CivicsApiStatus.LOADING

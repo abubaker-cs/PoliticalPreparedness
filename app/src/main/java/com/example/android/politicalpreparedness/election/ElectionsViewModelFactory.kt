@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.android.politicalpreparedness.database.ElectionDao
 import com.example.android.politicalpreparedness.network.CivicsApiService
 
-//TODO: Create Factory to generate ElectionViewModel with provided election datasource
+//DONE: Create Factory to generate ElectionViewModel with provided election datasource
 @Suppress("UNCHECKED_CAST")
 class ElectionsViewModelFactory(
     private val localDataSource: ElectionDao,

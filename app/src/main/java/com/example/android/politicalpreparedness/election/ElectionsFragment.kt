@@ -66,7 +66,7 @@ class ElectionsFragment : Fragment() {
 
     }
 
-    //TODO: Refresh adapters when fragment loads
+    //DONE: Refresh adapters when fragment loads
     override fun onResume() {
         super.onResume()
         viewModel.refresh()

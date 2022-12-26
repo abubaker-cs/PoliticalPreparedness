@@ -34,7 +34,7 @@ class DetailFragment : Fragment() {
 
     lateinit var binding: FragmentRepresentativeBinding
 
-    //TODO: Declare ViewModel
+    //DONE: Declare ViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,22 +42,22 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        //TODO: Establish bindings
+        //DONE: Establish bindings
         binding = FragmentRepresentativeBinding.inflate(layoutInflater)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.representativeViewModel = viewModel
         binding.rvRepresentatives.adapter = RepresentativeListAdapter()
 
-        //TODO: Define and assign Representative adapter
+        //DONE: Define and assign Representative adapter
         savedInstanceState?.let {
             it.getInt("motion_layout_state").let { restoredState ->
                 binding.motionLayout.transitionToState(restoredState)
             }
         }
 
-        //TODO: Populate Representative adapter
+        //DONE: Populate Representative adapter
 
-        //TODO: Establish button listeners for field and location search
+        //DONE: Establish button listeners for field and location search
         binding.buttonSearch.setOnClickListener {
             hideKeyboard()
             viewModel.getRepresentativesList()
@@ -91,7 +91,7 @@ class DetailFragment : Fragment() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
-        //TODO: Handle location permission result to get location on permission granted
+        //DONE: Handle location permission result to get location on permission granted
         if (REQUEST_ACCESS_FINE_LOCATION == requestCode) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getLocation()
@@ -125,7 +125,7 @@ class DetailFragment : Fragment() {
         //DONE: Get location from LocationServices
         val fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
 
-        //TODO: The geoCodeLocation method is a helper function to change the lat/long location to a human readable street address
+        //DONE: The geoCodeLocation method is a helper function to change the lat/long location to a human readable street address
         fusedLocationClient.lastLocation
 
             .addOnSuccessListener { location ->

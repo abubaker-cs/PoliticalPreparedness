@@ -11,7 +11,7 @@ import com.example.android.politicalpreparedness.utils.CivicsApiStatus
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-//TODO: Construct ViewModel and provide election datasource
+//DONE: Construct ViewModel and provide election datasource
 class ElectionsViewModel(
     private val database: ElectionDao,
     private val apiService: CivicsApiService
@@ -44,9 +44,9 @@ class ElectionsViewModel(
         getSavedElectionsFromDatabase()
     }
 
-    //TODO: Create val and functions to populate live data for upcoming elections from the API and saved elections from local database
+    //DONE: Create val and functions to populate live data for upcoming elections from the API and saved elections from local database
 
-    //TODO: Create functions to navigate to saved or upcoming election voter info
+    //DONE: Create functions to navigate to saved or upcoming election voter info
     private fun getUpcomingElectionsFromAPI() {
         _apiStatus.value = CivicsApiStatus.LOADING
         viewModelScope.launch {
