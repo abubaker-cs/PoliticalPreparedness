@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <!-- DONE: Add data binding node -->
+    <data>
+
+        <!-- @Election -->
+        <variable
+            name="election"
+            type="com.example.android.politicalpreparedness.network.models.Election"
+            />
+
+        <!-- @clickListener-->
+        <variable
+            name="clickListener"
+            type="com.example.android.politicalpreparedness.election.adapter.ElectionListAdapter.ElectionListener"
+            />
+
+    </data>
+
+    <!-- ConstraintLayout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:onClick="@{() -> clickListener.onClick(election)}"
+        >
+
+        <!-- Election Name -->
+        <TextView
+            android:id="@+id/tv_election_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="@{election.name}"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Election Name"
+            />
+
+        <!-- Election Date -->
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="12dp"
+            app:day="@{election.electionDay}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_election_name"
+            tools:text="Tue Feb 02 00:00:00 EDT 2021"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
