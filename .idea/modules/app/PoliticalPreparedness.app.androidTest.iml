@@ -71,6 +71,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/9f44e3e0705386f077f25b665352e8f3/transformed/jetified-core-ktx-1.9.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/915c64117156cbddaacdaf84b77f9f32/transformed/jetified-retrofit-2.9.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/f073b7eb596e5261b9f10b5d895eb9e3/transformed/room-runtime-2.4.3-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/88b6f650e78c963da81a7f73d6195259/transformed/jetified-timber-5.0.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/960eb5bd79099c31e14eb1e748852d3e/transformed/jetified-viewbinding-7.3.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/0779bed8b237a8d2b9805ef36e082cdd/transformed/jetified-lifecycle-process-2.4.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1f6c99b2601d4961f92d5cbeea162a0b/transformed/jetified-lifecycle-service-2.4.0-api.jar</arg>
@@ -297,6 +298,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-base:18.1.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-basement:18.1.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-tasks:18.0.2@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.jakewharton.timber:timber:5.0.1@aar" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="PoliticalPreparedness.app.main" />
 </module>
