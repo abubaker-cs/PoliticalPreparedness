@@ -18,7 +18,7 @@
             android:layout_height="300dp"
             android:adjustViewBounds="true"
             android:contentDescription="@string/default_image_description"
-            app:layout_constraintBottom_toTopOf="@+id/election_btn"
+            app:layout_constraintBottom_toTopOf="@+id/upcomingButton"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ballot_logo"
             />
@@ -26,7 +26,7 @@
 
         <!-- DONE: Add Button to navigate to upcoming elections. -->
         <Button
-            android:id="@+id/election_btn"
+            android:id="@+id/upcomingButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
@@ -43,7 +43,7 @@
 
         <!-- DONE: Add Button to navigate to representatives. -->
         <Button
-            android:id="@+id/representatives_btn"
+            android:id="@+id/representativeButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
