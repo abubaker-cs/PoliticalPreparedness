@@ -1,14 +1,18 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'kotlinx-serialization'
-apply plugin: 'androidx.navigation.safeargs'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'kotlin-parcelize'
+    id 'kotlinx-serialization'
+}
 
 android {
     compileSdkVersion 33
     buildFeatures {
         dataBinding true
+        viewBinding true
     }
     defaultConfig {
         applicationId 'com.example.android.politicalpreparedness'
@@ -22,9 +26,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
-    androidExtensions {
-        experimental = true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -74,6 +75,7 @@ dependencies {
 
     //Room
     implementation "androidx.room:room-runtime:$version_room"
+    implementation "androidx.room:room-ktx:$version_room"
     kapt "androidx.room:room-compiler:$version_room"
 
     // Location
