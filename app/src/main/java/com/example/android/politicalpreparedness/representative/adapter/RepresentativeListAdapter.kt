@@ -122,7 +122,7 @@ class RepresentativeDiffCallback : DiffUtil.ItemCallback<Representative>() {
      * @param newItem The item in the new list.
      * @return True if the two items represent the same object or false if they are different.
      *
-     * @see Callback.areItemsTheSame
+     * @see RepresentativeDiffCallback.areItemsTheSame
      */
     override fun areItemsTheSame(oldItem: Representative, newItem: Representative): Boolean {
         return (oldItem.office == newItem.office) && (oldItem.official == newItem.official)
@@ -155,7 +155,7 @@ class RepresentativeDiffCallback : DiffUtil.ItemCallback<Representative>() {
      * @param newItem The item in the new list.
      * @return True if the contents of the items are the same or false if they are different.
      *
-     * @see Callback.areContentsTheSame
+     * @see RepresentativeDiffCallback.areContentsTheSame
      */
     override fun areContentsTheSame(oldItem: Representative, newItem: Representative): Boolean {
         return oldItem == newItem

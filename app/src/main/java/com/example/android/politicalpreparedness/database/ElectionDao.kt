@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.example.android.politicalpreparedness.database
 
 import androidx.room.*

@@ -41,7 +41,7 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         //DONE: Establish bindings
         _binding = FragmentRepresentativeBinding.inflate(inflater, container, false)
@@ -110,10 +110,6 @@ class DetailFragment : Fragment() {
 
     }
 
-    private fun checkLocationPermissions(): Boolean {
-        return isPermissionGranted()
-    }
-
     //DONE: Check if permission is already granted and return (true = granted, false = denied/other)
 
     private fun isPermissionGranted(): Boolean {
@@ -147,7 +143,7 @@ class DetailFragment : Fragment() {
 
 
     @Suppress("DEPRECATION")
-    private fun geoCodeLocation(location: Location): Address {
+    private fun geoCodeLocation(location: Location): Address? {
 
         val geocoder = Geocoder(requireContext(), Locale.getDefault())
 
@@ -161,14 +157,7 @@ class DetailFragment : Fragment() {
                     address.postalCode
                 )
             }
-            ?.first() ?: Address(
-            "",
-            "",
-            "",
-            "",
-            ""
-        )
-
+            ?.first()
     }
 
     private fun hideKeyboard() {

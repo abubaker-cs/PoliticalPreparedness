@@ -58,6 +58,7 @@
             android:id="@+id/image_upcoming_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/api_status_indicator"
             app:civicsApiStatus="@{viewModel.apiStatus}"
             app:layout_constraintBottom_toBottomOf="@id/upcomingElections"
             app:layout_constraintEnd_toEndOf="parent"

@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.android.politicalpreparedness.database.ElectionDatabase
 import com.example.android.politicalpreparedness.databinding.FragmentElectionBinding
@@ -31,7 +30,7 @@ class ElectionsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         //DONE: Add binding values
         _binding = FragmentElectionBinding.inflate(inflater, container, false)
@@ -59,12 +58,12 @@ class ElectionsFragment : Fragment() {
             })
         }
 
-        viewModel.navigateToVoterInfoFragment.observe(viewLifecycleOwner, Observer {
+        viewModel.navigateToVoterInfoFragment.observe(viewLifecycleOwner) {
             if (null != it) {
                 navigateToDetailFragment(it)
                 viewModel.displayVoterInfoComplete()
             }
-        })
+        }
 
         return binding.root
 

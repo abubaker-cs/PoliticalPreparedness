@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.android.politicalpreparedness.database.ElectionDatabase
 import com.example.android.politicalpreparedness.databinding.FragmentVoterInfoBinding
@@ -54,18 +53,18 @@ class VoterInfoFragment : Fragment() {
 
         viewModel.getVoterInfo(electionId, division)
 
-        viewModel.apiStatus.observe(viewLifecycleOwner, Observer {
+        viewModel.apiStatus.observe(viewLifecycleOwner) {
             it?.let {
                 if (it == CivicsApiStatus.ERROR) showRequestErrorDialog()
             }
-        })
+        }
 
-        viewModel.url.observe(viewLifecycleOwner, Observer { it ->
+        viewModel.url.observe(viewLifecycleOwner) { it ->
             it?.let {
                 loadUrl(it)
                 viewModel.navigateToUrlCompleted()
             }
-        })
+        }
         return binding.root
 
         //DONE: Populate voter info -- hide views without provided data.
@@ -77,7 +76,7 @@ class VoterInfoFragment : Fragment() {
         //DONE: Handle loading of URLs
 
         //DONE: Handle save button UI state
-        //DONE: cont'd Handle save button clicks
+        //DONE: Handle save button clicks
 
     }
 

@@ -59,7 +59,7 @@ class ElectionListAdapter(private val clickListener: ElectionListener) :
          * @param newItem The item in the new list.
          * @return True if the two items represent the same object or false if they are different.
          *
-         * @see Callback.areItemsTheSame
+         * @see ElectionDiffCallback.areItemsTheSame
          */
         override fun areItemsTheSame(oldItem: Election, newItem: Election): Boolean {
             return oldItem.id == newItem.id
@@ -92,7 +92,7 @@ class ElectionListAdapter(private val clickListener: ElectionListener) :
          * @param newItem The item in the new list.
          * @return True if the contents of the items are the same or false if they are different.
          *
-         * @see Callback.areContentsTheSame
+         * @see ElectionDiffCallback.areContentsTheSame
          */
         override fun areContentsTheSame(oldItem: Election, newItem: Election): Boolean {
             return oldItem == newItem
