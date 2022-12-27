@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
-    <!-- DONE: Add node to connect Election ViewModel -->
     <data>
 
         <import type="android.view.View" />
 
         <variable
-            name="viewModel"
+            name="electionsViewModel"
             type="com.example.android.politicalpreparedness.election.ElectionsViewModel"
             />
     </data>
@@ -21,7 +20,6 @@
         tools:context="com.example.android.politicalpreparedness.MainActivity"
         >
 
-        <!-- Title: Upcoming Elections -->
         <TextView
             android:id="@+id/header_upcoming_election"
             android:layout_width="wrap_content"
@@ -34,9 +32,8 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
-        <!-- RecyclerView: List of Upcoming Elections -->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/upcomingElections"
+            android:id="@+id/recycler_upcoming"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginHorizontal="8dp"
@@ -50,23 +47,20 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/header_upcoming_election"
-            app:listData="@{viewModel.upcomingElections}"
+            app:listData="@{electionsViewModel.upcomingElections}"
             />
 
-        <!-- Upcoming Status: image-->
         <ImageView
             android:id="@+id/image_upcoming_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/api_status_indicator"
-            app:civicsApiStatus="@{viewModel.apiStatus}"
-            app:layout_constraintBottom_toBottomOf="@id/upcomingElections"
+            app:civicsApiStatus="@{electionsViewModel.apiStatus}"
+            app:layout_constraintBottom_toBottomOf="@id/recycler_upcoming"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/upcomingElections"
+            app:layout_constraintTop_toTopOf="@id/recycler_upcoming"
             />
 
-        <!-- Header: Saved Elections -->
         <TextView
             android:id="@+id/header_saved_election"
             android:layout_width="wrap_content"
@@ -75,14 +69,13 @@
             android:layout_marginTop="20dp"
             android:text="@string/head_saved_elections"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@id/savedElections"
+            app:layout_constraintBottom_toTopOf="@id/recycler_saved"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/upcomingElections"
+            app:layout_constraintTop_toBottomOf="@id/recycler_upcoming"
             />
 
-        <!-- RecyclerView: List of Saved Elections -->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/savedElections"
+            android:id="@+id/recycler_saved"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginHorizontal="8dp"
@@ -95,19 +88,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/header_saved_election"
-            app:listData="@{viewModel.savedElections}"
+            app:listData="@{electionsViewModel.savedElections}"
             />
 
-        <!-- Progressbar: Saved Status -->
         <ProgressBar
             android:id="@+id/progress_saved_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="@{viewModel.isDbLoading() ? View.VISIBLE : View.GONE }"
-            app:layout_constraintBottom_toBottomOf="@id/savedElections"
+            android:visibility="@{electionsViewModel.isDbLoading() ? View.VISIBLE : View.GONE }"
+            app:layout_constraintBottom_toBottomOf="@id/recycler_saved"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/savedElections"
+            app:layout_constraintTop_toTopOf="@id/recycler_saved"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

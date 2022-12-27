@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 //DONE: Construct ViewModel and provide election datasource
+
 class ElectionsViewModel(
     private val database: ElectionDao,
     private val apiService: CivicsApiService
@@ -25,12 +26,10 @@ class ElectionsViewModel(
     val isDbLoading: LiveData<Boolean>
         get() = _isDbLoading
 
-    //DONE: Create live data val for upcoming elections
     private val _upComingElections = MutableLiveData<List<Election>>()
     val upcomingElections: LiveData<List<Election>>
         get() = _upComingElections
 
-    //DONE: Create live data val for saved elections
     private val _savedElections = MutableLiveData<List<Election>>()
     val savedElections: LiveData<List<Election>>
         get() = _savedElections
@@ -44,30 +43,18 @@ class ElectionsViewModel(
         getSavedElectionsFromDatabase()
     }
 
-    //DONE: Create val and functions to populate live data for upcoming elections from the API and saved elections from local database
-
-    //DONE: Create functions to navigate to saved or upcoming election voter info
     private fun getUpcomingElectionsFromAPI() {
-
         _apiStatus.value = CivicsApiStatus.LOADING
-
         viewModelScope.launch {
             try {
-
                 val response = apiService.getElections()
-
                 _apiStatus.value = CivicsApiStatus.DONE
-
                 _upComingElections.value = response.elections
 
             } catch (e: Exception) {
-
                 Timber.e("Error: %s", e.localizedMessage)
-
                 _apiStatus.value = CivicsApiStatus.ERROR
-
                 _upComingElections.value = ArrayList()
-
             }
         }
     }
@@ -91,5 +78,4 @@ class ElectionsViewModel(
     fun refresh() {
         getSavedElectionsFromDatabase()
     }
-
 }

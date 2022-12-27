@@ -48,7 +48,7 @@ class VoterInfoFragment : Fragment() {
 
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
-            viewModel = viewModel
+            voterInfoViewModel = viewModel
         }
 
         viewModel.getVoterInfo(electionId, division)

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
-    <!-- DONE: Add data binding node for Voter Info ViewModel -->
     <data>
 
         <variable
@@ -13,10 +12,9 @@
             />
 
         <variable
-            name="viewModel"
+            name="voterInfoViewModel"
             type="com.example.android.politicalpreparedness.election.VoterInfoViewModel"
             />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,7 +23,6 @@
         tools:context="com.example.android.politicalpreparedness.MainActivity"
         >
 
-        <!-- DONE: Add title to toolbar -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/election_name"
             android:layout_width="match_parent"
@@ -37,18 +34,16 @@
             app:titleTextColor="@color/white"
             />
 
-        <!-- Election Date -->
         <TextView
             android:id="@+id/election_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_padding"
-            app:day="@{viewModel.election.electionDay}"
+            app:day="@{voterInfoViewModel.election.electionDay}"
             app:layout_constraintTop_toBottomOf="@id/election_name"
             tools:text="12 November 2055"
             />
 
-        <!-- Header: Election information -->
         <TextView
             android:id="@+id/state_header"
             android:layout_width="wrap_content"
@@ -61,44 +56,37 @@
             app:layout_constraintTop_toBottomOf="@id/election_date"
             />
 
-        <!-- State Locations -->
-        <!-- DONE: Add click binding to open web URL -->
         <TextView
             android:id="@+id/state_locations"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.navigateToUrl(viewModel.administrationBody.votingLocationFinderUrl)}"
+            android:onClick="@{() -> voterInfoViewModel.navigateToUrl(voterInfoViewModel.administrationBody.votingLocationFinderUrl)}"
             android:text="@string/voting_locations"
             app:layout_constraintStart_toStartOf="@id/election_date"
             app:layout_constraintTop_toBottomOf="@id/state_header"
             />
 
-        <!-- Ballot information -->
-        <!-- DONE: Add click binding to open web URL -->
         <TextView
             android:id="@+id/state_ballot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.navigateToUrl(viewModel.administrationBody.ballotInfoUrl)}"
+            android:onClick="@{() -> voterInfoViewModel.navigateToUrl(voterInfoViewModel.administrationBody.ballotInfoUrl)}"
             android:text="@string/ballot_information"
             app:layout_constraintStart_toStartOf="@id/election_date"
             app:layout_constraintTop_toBottomOf="@id/state_locations"
             />
 
-        <!-- Icon: API Status -->
         <ImageView
             android:id="@+id/image_api_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/icon_api_status"
-            app:civicsApiStatus="@{viewModel.apiStatus}"
+            app:civicsApiStatus="@{voterInfoViewModel.apiStatus}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
 
-        <!-- Button: Follow Election (Favorite) -->
         <Button
             android:id="@+id/follow_election_btn"
             android:layout_width="match_parent"
@@ -106,11 +94,11 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:enabled="@{viewModel.election != null}"
-            android:onClick="@{() -> viewModel.toggleFollowElection()}"
+            android:enabled="@{voterInfoViewModel.election != null}"
+            android:onClick="@{() -> voterInfoViewModel.toggleFollowElection()}"
             android:text="@string/follow_election"
             android:textColor="@color/white"
-            app:followOrUnfollow="@{viewModel.isElectionSaved}"
+            app:followOrUnfollow="@{voterInfoViewModel.isElectionSaved}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
