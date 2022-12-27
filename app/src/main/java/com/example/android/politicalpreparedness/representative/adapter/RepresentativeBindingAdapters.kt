@@ -1,10 +1,7 @@
 package com.example.android.politicalpreparedness.representative.adapter
 
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.ImageView
-import android.widget.Spinner
+import android.widget.*
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.databinding.InverseBindingAdapter
@@ -13,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.android.politicalpreparedness.R
 import com.example.android.politicalpreparedness.representative.model.Representative
+import com.example.android.politicalpreparedness.utils.CivicsApiStatus
 
 /**
  * RecyclerView binding adapter that updates the list data and list click handler.
@@ -138,6 +136,25 @@ fun fetchImage(view: ImageView, src: String?) {
 
     }
 
+}
+
+
+@BindingAdapter("apiStatus")
+fun TextView.setStatus(status: CivicsApiStatus?) {
+    when (status) {
+        CivicsApiStatus.LOADING -> {
+            text = resources.getString(R.string.status_loading)
+        }
+        CivicsApiStatus.ERROR -> {
+            text = resources.getString(R.string.status_error)
+        }
+        CivicsApiStatus.DONE -> {
+            text = ""
+        }
+        else -> {
+            visibility = View.INVISIBLE
+        }
+    }
 }
 
 /**

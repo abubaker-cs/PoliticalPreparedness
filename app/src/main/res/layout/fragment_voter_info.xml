@@ -13,7 +13,7 @@
             />
 
         <variable
-            name="voterInfoViewModel"
+            name="viewModel"
             type="com.example.android.politicalpreparedness.election.VoterInfoViewModel"
             />
 
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_padding"
-            app:day="@{voterInfoViewModel.election.electionDay.toString()}"
+            app:day="@{viewModel.election.electionDay}"
             app:layout_constraintTop_toBottomOf="@id/election_name"
             tools:text="12 November 2055"
             />
@@ -67,7 +67,7 @@
             android:id="@+id/state_locations"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> voterInfoViewModel.navigateToUrl(voterInfoViewModel.administrationBody.votingLocationFinderUrl)}"
+            android:onClick="@{() -> viewModel.navigateToUrl(viewModel.administrationBody.votingLocationFinderUrl)}"
             android:text="@string/voting_locations"
             app:layout_constraintStart_toStartOf="@id/election_date"
             app:layout_constraintTop_toBottomOf="@id/state_header"
@@ -79,7 +79,7 @@
             android:id="@+id/state_ballot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> voterInfoViewModel.navigateToUrl(voterInfoViewModel.administrationBody.ballotInfoUrl)}"
+            android:onClick="@{() -> viewModel.navigateToUrl(viewModel.administrationBody.ballotInfoUrl)}"
             android:text="@string/ballot_information"
             app:layout_constraintStart_toStartOf="@id/election_date"
             app:layout_constraintTop_toBottomOf="@id/state_locations"
@@ -91,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/icon_api_status"
-            app:civicsApiStatus="@{voterInfoViewModel.apiStatus}"
+            app:civicsApiStatus="@{viewModel.apiStatus}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -106,11 +106,11 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:enabled="@{voterInfoViewModel.election != null}"
-            android:onClick="@{() -> voterInfoViewModel.toggleFollowElection()}"
+            android:enabled="@{viewModel.election != null}"
+            android:onClick="@{() -> viewModel.toggleFollowElection()}"
             android:text="@string/follow_election"
             android:textColor="@color/white"
-            app:followOrUnfollow="@{voterInfoViewModel.isElectionSaved}"
+            app:followOrUnfollow="@{viewModel.isElectionSaved}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
