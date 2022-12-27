@@ -46,12 +46,12 @@ class ElectionsFragment : Fragment() {
 
             // Upcoming Elections
             upcomingElections.adapter = ElectionListAdapter(ElectionListAdapter.ElectionListener {
-                viewModel.displayVoterInfo(it)
+                viewModel?.displayVoterInfo(it)
             })
 
             // Saved Elections
             savedElections.adapter = ElectionListAdapter(ElectionListAdapter.ElectionListener {
-                viewModel.displayVoterInfo(it)
+                viewModel?.displayVoterInfo(it)
             })
         }
 

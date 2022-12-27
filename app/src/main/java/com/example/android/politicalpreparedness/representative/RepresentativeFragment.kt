@@ -83,6 +83,7 @@ class DetailFragment : Fragment() {
         }
     }
 
+    @Suppress("DEPRECATION")
     @Deprecated("Deprecated in Java")
     override fun onRequestPermissionsResult(
         requestCode: Int,

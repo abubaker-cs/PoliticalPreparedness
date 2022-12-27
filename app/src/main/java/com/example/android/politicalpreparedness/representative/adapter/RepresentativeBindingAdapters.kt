@@ -160,6 +160,7 @@ fun TextView.setStatus(status: CivicsApiStatus?) {
 /**
  * toTypedAdapter() is used to convert the adapter to a typed adapter
  */
+@Suppress("UNCHECKED_CAST")
 inline fun <reified T> toTypedAdapter(adapter: ArrayAdapter<*>): ArrayAdapter<T> {
 
     // Create a new array adapter
