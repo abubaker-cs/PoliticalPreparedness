@@ -35,7 +35,7 @@ class VoterInfoFragment : Fragment() {
     ): View {
 
         val voterInfoFragmentArgs =
-            com.example.android.politicalpreparedness.election.VoterInfoFragmentArgs.fromBundle(
+            VoterInfoFragmentArgs.fromBundle(
                 requireArguments()
             )
         val electionId = voterInfoFragmentArgs.argElectionId

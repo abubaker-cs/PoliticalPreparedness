@@ -74,7 +74,7 @@ class ElectionsFragment : Fragment() {
 
     private fun navigateToDetailFragment(election: Election) {
         this.findNavController().navigate(
-            com.example.android.politicalpreparedness.election.ElectionsFragmentDirections.actionElectionsFragmentToVoterInfoFragment(
+            ElectionsFragmentDirections.actionElectionsFragmentToVoterInfoFragment(
                 election.id,
                 election.division
             )
