@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.example.android.politicalpreparedness.utils
 
 import android.view.View
