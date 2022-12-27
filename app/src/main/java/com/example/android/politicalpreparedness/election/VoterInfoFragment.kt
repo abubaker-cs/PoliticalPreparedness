@@ -1,4 +1,4 @@
-package com.example.android.politicalpreparedness.election.voterinfo
+package com.example.android.politicalpreparedness.election
 
 import android.content.Intent
 import android.net.Uri
