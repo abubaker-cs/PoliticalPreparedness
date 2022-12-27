@@ -141,7 +141,11 @@ class DetailFragment : Fragment() {
             }
     }
 
-
+    /**
+     * TODO
+     * This will populate the user's location in the address fields
+     * Since the ZIPCode might be null, this is going to crash the app
+     */
     @Suppress("DEPRECATION")
     private fun geoCodeLocation(location: Location): Address? {
 
@@ -159,6 +163,8 @@ class DetailFragment : Fragment() {
             }
             ?.first()
     }
+
+    // address.postalCode
 
     private fun hideKeyboard() {
         val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager

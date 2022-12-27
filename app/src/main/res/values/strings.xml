@@ -35,5 +35,6 @@
     <string name="txt_office_name">President of the US</string>
     <string name="txt_candidate_name">Mike</string>
     <string name="api_status_indicator">API Status indicator</string>
+    <string name="error_invalid_address">Invalid Address</string>
 
 </resources>
