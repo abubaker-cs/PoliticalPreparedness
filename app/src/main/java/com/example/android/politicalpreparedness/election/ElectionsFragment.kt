@@ -38,19 +38,19 @@ class ElectionsFragment : Fragment() {
             lifecycleOwner = viewLifecycleOwner
 
             //DONE: Add ViewModel values and create ViewModel
-            electionsViewModel = viewModel
+            viewModel = viewModel
 
             //DONE: Link elections to voter info
             //DONE: Initiate recycler adapters
             //DONE: Populate recycler adapters
 
             // Upcoming Elections
-            recyclerUpcoming.adapter = ElectionListAdapter(ElectionListAdapter.ElectionListener {
+            upcomingElections.adapter = ElectionListAdapter(ElectionListAdapter.ElectionListener {
                 viewModel.displayVoterInfo(it)
             })
 
             // Saved Elections
-            recyclerSaved.adapter = ElectionListAdapter(ElectionListAdapter.ElectionListener {
+            savedElections.adapter = ElectionListAdapter(ElectionListAdapter.ElectionListener {
                 viewModel.displayVoterInfo(it)
             })
         }
