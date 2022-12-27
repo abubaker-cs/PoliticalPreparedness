@@ -1,4 +1,4 @@
-package com.example.android.politicalpreparedness.election
+package com.example.android.politicalpreparedness.election.voterinfo
 
 import android.content.Intent
 import android.net.Uri
@@ -34,7 +34,10 @@ class VoterInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val voterInfoFragmentArgs = VoterInfoFragmentArgs.fromBundle(requireArguments())
+        val voterInfoFragmentArgs =
+            com.example.android.politicalpreparedness.election.VoterInfoFragmentArgs.fromBundle(
+                requireArguments()
+            )
         val electionId = voterInfoFragmentArgs.argElectionId
         val division = voterInfoFragmentArgs.argDivision
 

@@ -11,7 +11,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.android.politicalpreparedness.election.ElectionsViewModel"
+            type="com.example.android.politicalpreparedness.election.elections.ElectionsViewModel"
             />
     </data>
 

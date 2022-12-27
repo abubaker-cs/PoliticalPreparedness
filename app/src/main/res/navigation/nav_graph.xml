@@ -35,7 +35,7 @@
     <!-- 03 Elections -->
     <fragment
         android:id="@+id/electionsFragment"
-        android:name="com.example.android.politicalpreparedness.election.ElectionsFragment"
+        android:name="com.example.android.politicalpreparedness.election.elections.ElectionsFragment"
         android:label="fragment_elections"
         tools:layout="@layout/fragment_election"
         >
@@ -49,7 +49,7 @@
     <!-- 04 Voter Info -->
     <fragment
         android:id="@+id/voterInfoFragment"
-        android:name="com.example.android.politicalpreparedness.election.VoterInfoFragment"
+        android:name="com.example.android.politicalpreparedness.election.voterinfo.VoterInfoFragment"
         android:label="fragment_voter_info"
         tools:layout="@layout/fragment_voter_info"
         >

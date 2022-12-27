@@ -1,4 +1,4 @@
-package com.example.android.politicalpreparedness.election
+package com.example.android.politicalpreparedness.election.elections
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -74,7 +74,7 @@ class ElectionsFragment : Fragment() {
 
     private fun navigateToDetailFragment(election: Election) {
         this.findNavController().navigate(
-            ElectionsFragmentDirections.actionElectionsFragmentToVoterInfoFragment(
+            com.example.android.politicalpreparedness.election.ElectionsFragmentDirections.actionElectionsFragmentToVoterInfoFragment(
                 election.id,
                 election.division
             )
