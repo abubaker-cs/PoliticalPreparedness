@@ -153,12 +153,16 @@ class DetailFragment : Fragment() {
 
         return geocoder.getFromLocation(location.latitude, location.longitude, 1)
             ?.map { address ->
+
+                // This will provide a fallback to the zipcode if the zip is not available
+                val zipcode = if (address.postalCode == null) "00000" else address.postalCode
+
                 Address(
                     address.thoroughfare,
                     address.subThoroughfare,
                     address.locality,
                     address.adminArea,
-                    address.postalCode
+                    zipcode
                 )
             }
             ?.first()
