@@ -17,6 +17,7 @@ import com.example.android.politicalpreparedness.representative.model.Representa
 /**
  * RecyclerView binding adapter that updates the list data and list click handler.
  */
+@BindingAdapter("representativeList")
 fun RecyclerView.setRepresentativeData(data: List<Representative>?) {
 
     // Add binding adapter to bind the representative data to the RecyclerView
