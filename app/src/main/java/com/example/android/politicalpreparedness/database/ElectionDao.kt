@@ -12,7 +12,7 @@ interface ElectionDao {
 
     //DONE: Add select all election query
     @Query("SELECT * FROM election_table ORDER BY electionDay")
-    suspend fun getElections(): List<Election>
+    suspend fun getAllElections(): List<Election>
 
     //DONE: Add select single election query
     @Query("SELECT * FROM election_table WHERE id = :id")

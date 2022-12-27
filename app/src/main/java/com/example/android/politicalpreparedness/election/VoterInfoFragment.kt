@@ -46,7 +46,7 @@ class VoterInfoFragment : Fragment() {
             voterInfoViewModel = viewModel
         }
 
-        viewModel.getVoterInformation(electionId, division)
+        viewModel.getVoterInfo(electionId, division)
 
         viewModel.apiStatus.observe(viewLifecycleOwner, Observer {
             it?.let {

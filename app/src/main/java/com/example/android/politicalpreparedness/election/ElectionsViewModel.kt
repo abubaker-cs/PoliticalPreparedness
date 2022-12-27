@@ -17,14 +17,6 @@ class ElectionsViewModel(
     private val apiService: CivicsApiService
 ) : ViewModel() {
 
-    private val _apiStatus = MutableLiveData<CivicsApiStatus>()
-    val apiStatus: LiveData<CivicsApiStatus>
-        get() = _apiStatus
-
-    private val _isDbLoading = MutableLiveData<Boolean>()
-    val isDbLoading: LiveData<Boolean>
-        get() = _isDbLoading
-
     //DONE: Create live data val for upcoming elections
     private val _upComingElections = MutableLiveData<List<Election>>()
     val upcomingElections: LiveData<List<Election>>
@@ -35,9 +27,17 @@ class ElectionsViewModel(
     val savedElections: LiveData<List<Election>>
         get() = _savedElections
 
-    private val _navigateToVoterInfo = MutableLiveData<Election>()
-    val navigateToVoterInfo: LiveData<Election>
-        get() = _navigateToVoterInfo
+    private val _navigateToVoterInfoFragment = MutableLiveData<Election>()
+    val navigateToVoterInfoFragment: MutableLiveData<Election>
+        get() = _navigateToVoterInfoFragment
+
+    private val _apiStatus = MutableLiveData<CivicsApiStatus>()
+    val apiStatus: LiveData<CivicsApiStatus>
+        get() = _apiStatus
+
+    private val _isDbLoading = MutableLiveData<Boolean>()
+    val isDbLoading: LiveData<Boolean>
+        get() = _isDbLoading
 
     init {
         getUpcomingElectionsFromAPI()
@@ -48,7 +48,9 @@ class ElectionsViewModel(
 
     //DONE: Create functions to navigate to saved or upcoming election voter info
     private fun getUpcomingElectionsFromAPI() {
+
         _apiStatus.value = CivicsApiStatus.LOADING
+
         viewModelScope.launch {
             try {
                 val response = apiService.getElections()
@@ -66,17 +68,17 @@ class ElectionsViewModel(
     private fun getSavedElectionsFromDatabase() {
         _isDbLoading.value = true
         viewModelScope.launch {
-            _savedElections.value = database.getElections()
+            _savedElections.value = database.getAllElections()
             _isDbLoading.value = false
         }
     }
 
     fun displayVoterInfo(election: Election) {
-        _navigateToVoterInfo.value = election
+        _navigateToVoterInfoFragment.value = election
     }
 
     fun displayVoterInfoComplete() {
-        _navigateToVoterInfo.value = null
+        _navigateToVoterInfoFragment.value = null
     }
 
     fun refresh() {

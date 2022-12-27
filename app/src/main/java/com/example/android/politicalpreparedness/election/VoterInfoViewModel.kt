@@ -40,12 +40,13 @@ class VoterInfoViewModel(
     val isElectionSaved: LiveData<Boolean>
         get() = _isElectionSaved
 
-    fun getVoterInformation(electionId: Int, division: Division) {
+    fun getVoterInfo(electionId: Int, division: Division) {
+
         _apiStatus.value = CivicsApiStatus.LOADING
 
         viewModelScope.launch {
             try {
-                val savedElection = dataSource.getElection(electionId)
+                val savedElection: Election? = dataSource.getElection(electionId)
                 _isElectionSaved.value = savedElection != null
 
                 val address = "${division.state}, ${division.country}"

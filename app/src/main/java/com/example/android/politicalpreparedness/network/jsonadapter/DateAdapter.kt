@@ -6,6 +6,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class DateAdapter {
+
+    //
     private val format = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
 
     @FromJson
