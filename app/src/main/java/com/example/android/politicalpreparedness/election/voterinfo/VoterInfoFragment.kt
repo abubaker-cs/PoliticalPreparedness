@@ -18,6 +18,8 @@ import com.example.android.politicalpreparedness.utils.CivicsApiStatus
 
 class VoterInfoFragment : Fragment() {
 
+    private var _binding: FragmentVoterInfoBinding? = null
+    private val binding get() = _binding!!
 
     //DONE: Add ViewModel values and create ViewModel
     private val viewModel by viewModels<VoterInfoViewModel> {
@@ -43,7 +45,8 @@ class VoterInfoFragment : Fragment() {
 
 
         //DONE: Add binding values
-        val binding = FragmentVoterInfoBinding.inflate(layoutInflater)
+        _binding = FragmentVoterInfoBinding.inflate(inflater, container, false)
+
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = viewModel
@@ -94,6 +97,12 @@ class VoterInfoFragment : Fragment() {
         val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         startActivity(browserIntent)
         // viewModel.navigateToUrlCompleted()
+    }
+
+    // This will avoid memory leaks
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

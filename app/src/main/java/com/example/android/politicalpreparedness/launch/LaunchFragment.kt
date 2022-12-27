@@ -10,13 +10,17 @@ import com.example.android.politicalpreparedness.databinding.FragmentLaunchBindi
 
 class LaunchFragment : Fragment() {
 
+    private var _binding: FragmentLaunchBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = FragmentLaunchBinding.inflate(inflater)
-        binding.lifecycleOwner = this
+        _binding = FragmentLaunchBinding.inflate(inflater, container, false)
+
+        binding.lifecycleOwner = viewLifecycleOwner
 
         // Button: Representatives
         binding.representativeButton.setOnClickListener {
@@ -41,6 +45,12 @@ class LaunchFragment : Fragment() {
     private fun navToElections() {
         this.findNavController()
             .navigate(LaunchFragmentDirections.actionLaunchFragmentToElectionsFragment())
+    }
+
+    // This will avoid memory leaks
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

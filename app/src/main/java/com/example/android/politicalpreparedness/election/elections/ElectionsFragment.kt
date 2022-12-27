@@ -16,6 +16,9 @@ import com.example.android.politicalpreparedness.network.models.Election
 
 class ElectionsFragment : Fragment() {
 
+    private var _binding: FragmentElectionBinding? = null
+    private val binding get() = _binding!!
+
     //DONE: Declare ViewModel
     private val viewModel by viewModels<ElectionsViewModel> {
         ElectionsViewModelFactory(
@@ -31,7 +34,8 @@ class ElectionsFragment : Fragment() {
     ): View? {
 
         //DONE: Add binding values
-        val binding = FragmentElectionBinding.inflate(inflater)
+        _binding = FragmentElectionBinding.inflate(inflater, container, false)
+
 
         binding.apply {
 
@@ -79,6 +83,12 @@ class ElectionsFragment : Fragment() {
                 election.division
             )
         )
+    }
+
+    // This will avoid memory leaks
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

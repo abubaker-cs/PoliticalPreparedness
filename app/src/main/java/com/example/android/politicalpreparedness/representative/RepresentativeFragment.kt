@@ -23,6 +23,9 @@ import java.util.*
 
 class DetailFragment : Fragment() {
 
+    private var _binding: FragmentRepresentativeBinding? = null
+    private val binding get() = _binding!!
+
     //DONE: Add Constant for Location request
     companion object {
         private const val REQUEST_ACCESS_FINE_LOCATION = 101
@@ -31,8 +34,6 @@ class DetailFragment : Fragment() {
     private val viewModel: RepresentativeViewModel by lazy {
         ViewModelProvider(this)[RepresentativeViewModel::class.java]
     }
-
-    lateinit var binding: FragmentRepresentativeBinding
 
     //DONE: Declare ViewModel
 
@@ -43,7 +44,9 @@ class DetailFragment : Fragment() {
     ): View? {
 
         //DONE: Establish bindings
-        binding = FragmentRepresentativeBinding.inflate(layoutInflater)
+        _binding = FragmentRepresentativeBinding.inflate(inflater, container, false)
+
+
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
         binding.rvRepresentatives.adapter = RepresentativeListAdapter()
