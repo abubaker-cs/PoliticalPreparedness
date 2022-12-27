@@ -92,6 +92,4 @@ class RepresentativeViewModel(private val savedHandle: SavedStateHandle) : ViewM
         getRepresentativesList(_address.value)
     }
 
-    //TODO: Create function to get address from individual fields
-
 }

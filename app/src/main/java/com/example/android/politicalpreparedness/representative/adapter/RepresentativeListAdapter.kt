@@ -162,5 +162,3 @@ class RepresentativeDiffCallback : DiffUtil.ItemCallback<Representative>() {
     }
 
 }
-
-//TODO: Create RepresentativeListener
