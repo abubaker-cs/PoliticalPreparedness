@@ -43,7 +43,7 @@ class VoterInfoFragment : Fragment() {
         val binding = FragmentVoterInfoBinding.inflate(layoutInflater)
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
-            voterInfoViewModel = viewModel
+            viewModel = viewModel
         }
 
         viewModel.getVoterInfo(electionId, division)
