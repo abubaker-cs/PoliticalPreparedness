@@ -69,7 +69,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/dc1a2c04149480725771def853f5d528/transformed/jetified-moshi-kotlin-1.14.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d16a58908e5c6a8e698b181d25a1f4e3/transformed/jetified-moshi-adapters-1.14.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/6ec2bc2a77e7fafac553bfa0912bc575/transformed/jetified-moshi-1.14.0.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/95b4e47932c575aa2b8c3f452a3ccec5/transformed/jetified-kotlin-stdlib-jdk8-1.7.21.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/1fd8020f83a9a39afc14d7e171d2f6e5/transformed/jetified-kotlin-stdlib-jdk8-1.7.20.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/9f44e3e0705386f077f25b665352e8f3/transformed/jetified-core-ktx-1.9.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/88b6f650e78c963da81a7f73d6195259/transformed/jetified-timber-5.0.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/43f8ff6fd33307ec8bcd5d630715b856/transformed/dynamicanimation-1.0.0-api.jar</arg>
@@ -77,7 +77,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/55fee85ba9344f3b780a30dd44570eb3/transformed/loader-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/b41b5b95883973e516794ad40306e1d9/transformed/lifecycle-viewmodel-2.5.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d4253bdd38e76627053a90d986191103/transformed/jetified-kotlin-android-extensions-runtime-1.7.20.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/26e6c57bb1b70acdf24313427584ee39/transformed/jetified-kotlin-stdlib-jdk7-1.7.21.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/2bfc74d75221314618e194169a031695/transformed/jetified-kotlin-stdlib-jdk7-1.7.20.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/736e4d35ab100505676ce560745f0b63/transformed/jetified-kotlinx-serialization-runtime-jvm-1.0-M1-1.4.0-rc.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/915c64117156cbddaacdaf84b77f9f32/transformed/jetified-retrofit-2.9.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/ea327b9358b32dfe55cd0775876761e9/transformed/jetified-okhttp-3.14.9.jar</arg>
@@ -99,8 +99,8 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/e65a2df5becfd3507e0649895e23266e/transformed/jetified-savedstate-1.2.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/220452bb4716c4031f63a3315bd572f7/transformed/jetified-collection-ktx-1.1.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/e00aecc8360d7e4597f6f4ad2c1bbffb/transformed/jetified-lifecycle-livedata-core-ktx-2.5.1-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/07199f5ac139e579541c8f59a112b388/transformed/jetified-kotlin-stdlib-1.7.21.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/e78fc9d5325ed1bdd1b28df1a4a9090e/transformed/jetified-kotlin-stdlib-common-1.7.21.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/8c816b5c91b47c9bf168cd4e93cda297/transformed/jetified-kotlin-stdlib-1.7.20.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/f0da636c3a8e4c2b7622b5f8bf40da2e/transformed/jetified-kotlin-stdlib-common-1.7.20.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/42a1a65b913005e5636dd2f9a6c56be2/transformed/jetified-annotations-20.1.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/0779bed8b237a8d2b9805ef36e082cdd/transformed/jetified-lifecycle-process-2.4.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1f6c99b2601d4961f92d5cbeea162a0b/transformed/jetified-lifecycle-service-2.4.0-api.jar</arg>
@@ -200,11 +200,11 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.lifecycle:lifecycle-common:2.5.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.21" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.7.21" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.7.21" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.7.20" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.7.20" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains:annotations:20.1.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.21" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.20" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-parcelize-runtime:1.7.20" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.7.20" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-serialization-runtime-jvm:1.0-M1-1.4.0-rc" level="project" />

@@ -33,6 +33,7 @@ fun RecyclerView.setRepresentativeData(data: List<Representative>?) {
  */
 
 // setNewValue() is used to set the value of the spinner
+// Annotate the method that sets the initial value and updates when the value changes using @BindingAdapter
 @BindingAdapter("stateValue")
 fun Spinner.setNewValue(value: String?) {
 
@@ -57,6 +58,7 @@ fun Spinner.setNewValue(value: String?) {
 }
 
 // getNewValue() is used to get the value of the spinner
+// Annotate the method that reads the value from the view using @InverseBindingAdapter
 @InverseBindingAdapter(attribute = "stateValue")
 fun Spinner.getNewValue(): String {
 
