@@ -17,20 +17,6 @@ class ElectionsViewModel(
     private val apiService: CivicsApiService
 ) : ViewModel() {
 
-    //DONE: Create live data val for upcoming elections
-    private val _upComingElections = MutableLiveData<List<Election>>()
-    val upcomingElections: LiveData<List<Election>>
-        get() = _upComingElections
-
-    //DONE: Create live data val for saved elections
-    private var _savedElections = MutableLiveData<List<Election>>()
-    val savedElections: LiveData<List<Election>>
-        get() = _savedElections
-
-    private val _navigateToVoterInfoFragment = MutableLiveData<Election>()
-    val navigateToVoterInfoFragment: MutableLiveData<Election>
-        get() = _navigateToVoterInfoFragment
-
     private val _apiStatus = MutableLiveData<CivicsApiStatus>()
     val apiStatus: LiveData<CivicsApiStatus>
         get() = _apiStatus
@@ -38,6 +24,20 @@ class ElectionsViewModel(
     private val _isDbLoading = MutableLiveData<Boolean>()
     val isDbLoading: LiveData<Boolean>
         get() = _isDbLoading
+
+    //DONE: Create live data val for upcoming elections
+    private val _upComingElections = MutableLiveData<List<Election>>()
+    val upcomingElections: LiveData<List<Election>>
+        get() = _upComingElections
+
+    //DONE: Create live data val for saved elections
+    private val _savedElections = MutableLiveData<List<Election>>()
+    val savedElections: LiveData<List<Election>>
+        get() = _savedElections
+
+    private val _navigateToVoterInfo = MutableLiveData<Election>()
+    val navigateToVoterInfo: LiveData<Election>
+        get() = _navigateToVoterInfo
 
     init {
         getUpcomingElectionsFromAPI()
@@ -53,14 +53,21 @@ class ElectionsViewModel(
 
         viewModelScope.launch {
             try {
+
                 val response = apiService.getElections()
+
                 _apiStatus.value = CivicsApiStatus.DONE
+
                 _upComingElections.value = response.elections
 
             } catch (e: Exception) {
+
                 Timber.e("Error: %s", e.localizedMessage)
+
                 _apiStatus.value = CivicsApiStatus.ERROR
+
                 _upComingElections.value = ArrayList()
+
             }
         }
     }
@@ -68,17 +75,17 @@ class ElectionsViewModel(
     private fun getSavedElectionsFromDatabase() {
         _isDbLoading.value = true
         viewModelScope.launch {
-            _savedElections.value = database.getAllElections()
+            _savedElections.value = database.getElections()
             _isDbLoading.value = false
         }
     }
 
     fun displayVoterInfo(election: Election) {
-        _navigateToVoterInfoFragment.value = election
+        _navigateToVoterInfo.value = election
     }
 
     fun displayVoterInfoComplete() {
-        _navigateToVoterInfoFragment.value = null
+        _navigateToVoterInfo.value = null
     }
 
     fun refresh() {

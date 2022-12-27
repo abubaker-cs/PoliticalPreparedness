@@ -58,7 +58,7 @@ class ElectionsFragment : Fragment() {
             })
         }
 
-        viewModel.navigateToVoterInfoFragment.observe(viewLifecycleOwner) {
+        viewModel.navigateToVoterInfo.observe(viewLifecycleOwner) {
             if (null != it) {
                 navigateToDetailFragment(it)
                 viewModel.displayVoterInfoComplete()
