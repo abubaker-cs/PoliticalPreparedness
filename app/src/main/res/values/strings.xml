@@ -4,7 +4,6 @@
 
     <!-- DONE: Add necessary string values -->
     <string name="avatar">Avatar</string>
-    <string name="ballot_information">Visit website</string>
     <string name="correspondence_address">Correspondence Address</string>
     <string name="default_address">Address</string>
     <string name="edit_address_line_1">Address line 1 </string>
@@ -28,7 +27,7 @@
     <string name="unfollow_btn">unfollow election</string>
     <string name="upcoming_elections">UPCOMING ELECTIONS</string>
     <string name="use_my_location_btn">USE GPS TO FIND MY ADDRESS</string>
-    <string name="voting_locations">Visit website</string>
+    <string name="visit_website">Visit website</string>
     <string name="website">Website</string>
     <string name="default_image_description">Voting</string>
     <string name="icon_api_status">Icon to indicate API status</string>
@@ -39,5 +38,6 @@
     <string name="lbl_election_location">Election Location</string>
     <string name="election_ballot_information">Ballot Information</string>
     <string name="election_information">Election Information</string>
+    <string name="placeholder_election_date">28 December 2022</string>
 
 </resources>

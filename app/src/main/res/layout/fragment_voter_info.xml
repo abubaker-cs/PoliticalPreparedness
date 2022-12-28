@@ -20,26 +20,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
+        android:padding="@dimen/size_sixteen"
         tools:context="com.example.android.politicalpreparedness.MainActivity"
         >
 
-        <!--                <androidx.appcompat.widget.Toolbar-->
-        <!--                    android:id="@+id/election_name"-->
-        <!--                    android:layout_width="match_parent"-->
-        <!--                    android:layout_height="wrap_content"-->
-        <!--                    android:background="@color/colorPrimaryDark"-->
-        <!--                    android:padding="@dimen/default_padding"-->
-        <!--                    android:singleLine="true"-->
-        <!--                    app:layout_constraintTop_toTopOf="parent"-->
-        <!--                    app:titleTextColor="@color/white"-->
-        <!--                    />-->
-
+        <!-- Main Heading: Election Information -->
         <TextView
             android:id="@+id/lbl_election_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="@dimen/size_twenty_four"
             android:text="@string/election_information"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
@@ -50,12 +40,12 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
-        <!-- Date -->
+        <!-- Sub-Heading: Election Date -->
         <TextView
             android:id="@+id/state_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="@dimen/size_thirty_six"
             android:text="@string/election_date"
             android:textAllCaps="true"
             android:textColor="@color/colorSecondary"
@@ -65,22 +55,24 @@
             app:layout_constraintTop_toBottomOf="@id/lbl_election_info"
             />
 
+        <!-- TextView: Election Date -->
         <TextView
             android:id="@+id/election_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/size_eight"
             android:textSize="21sp"
             app:day="@{voterInfoViewModel.election.electionDay}"
             app:layout_constraintStart_toStartOf="@id/election_date"
             app:layout_constraintTop_toBottomOf="@id/state_header"
-            tools:text="12 November 2055"
+            tools:text="@string/placeholder_election_date"
             />
 
+        <!-- Divider -->
         <View
             android:id="@+id/div_date"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/size_one"
             android:layout_marginTop="21dp"
             android:background="@color/colorPrimaryLight"
             app:layout_constraintEnd_toEndOf="parent"
@@ -90,13 +82,12 @@
             tools:layout_editor_absoluteY="16dp"
             />
 
-        <!-- Location -->
-
+        <!-- Sub-Heading: Election Location -->
         <TextView
             android:id="@+id/lbl_locations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/size_twenty"
             android:text="@string/lbl_election_location"
             android:textAllCaps="true"
             android:textColor="@color/colorSecondary"
@@ -106,39 +97,40 @@
             app:layout_constraintTop_toBottomOf="@id/div_date"
             />
 
+        <!-- Weblink: Election Location -->
         <TextView
             android:id="@+id/state_locations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/size_eight"
             android:onClick="@{() -> voterInfoViewModel.navigateToUrl(voterInfoViewModel.administrationBody.votingLocationFinderUrl)}"
-            android:text="@string/voting_locations"
+            android:text="@string/visit_website"
             android:textColor="@color/colorURL"
             android:textSize="21sp"
             app:layout_constraintStart_toStartOf="@id/election_date"
             app:layout_constraintTop_toBottomOf="@id/lbl_locations"
             />
 
+        <!-- Divider -->
         <View
             android:id="@+id/div_location"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="21dp"
+            android:layout_height="@dimen/size_one"
+            android:layout_marginTop="@dimen/text_twenty_one"
             android:background="@color/colorPrimaryLight"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@id/election_date"
             app:layout_constraintTop_toBottomOf="@id/state_locations"
-            tools:layout_editor_absoluteY="16dp"
+            tools:layout_editor_absoluteY="@dimen/text_sixteen"
             />
 
-        <!-- Ballot -->
-
+        <!-- Sub-Heading: Ballot Information -->
         <TextView
             android:id="@+id/lbl_ballot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="@dimen/text_twenty_one"
             android:text="@string/election_ballot_information"
             android:textAllCaps="true"
             android:textColor="@color/colorSecondary"
@@ -148,13 +140,14 @@
             app:layout_constraintTop_toBottomOf="@id/div_location"
             />
 
+        <!-- Weblink: Ballot Information -->
         <TextView
             android:id="@+id/state_ballot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/size_eight"
             android:onClick="@{() -> voterInfoViewModel.navigateToUrl(voterInfoViewModel.administrationBody.ballotInfoUrl)}"
-            android:text="@string/ballot_information"
+            android:text="@string/visit_website"
             android:textColor="@color/colorURL"
             android:textSize="21sp"
             app:layout_constraintStart_toStartOf="@id/election_date"
@@ -178,8 +171,8 @@
         <Button
             android:id="@+id/follow_election_btn"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_margin="24dp"
+            android:layout_height="@dimen/size_zero"
+            android:layout_margin="@dimen/size_twenty_four"
             android:backgroundTint="@color/colorPrimary"
             android:enabled="@{voterInfoViewModel.election != null}"
             android:onClick="@{() -> voterInfoViewModel.toggleFollowElection()}"
