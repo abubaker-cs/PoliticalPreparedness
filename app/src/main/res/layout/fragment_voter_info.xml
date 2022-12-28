@@ -134,6 +134,7 @@
         <Button
             android:id="@+id/follow_election_btn"
             style="@style/info_btn_follow_unfollow"
+            android:enabled="@{voterInfoViewModel.election != null}"
             android:onClick="@{() -> voterInfoViewModel.toggleFollowElection()}"
             android:text="@string/follow_election"
             app:followOrUnfollow="@{voterInfoViewModel.isElectionSaved}"

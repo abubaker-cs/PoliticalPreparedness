@@ -70,7 +70,7 @@
         <!-- Icon: Website -->
         <ImageView
             android:id="@+id/wwwIcon"
-            style="@style/social_icon"
+            style="@style/social_icon_styles"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/facebookIcon"
             app:layout_constraintTop_toTopOf="parent"
@@ -80,7 +80,7 @@
         <!-- Icon: Facebook -->
         <ImageView
             android:id="@+id/facebookIcon"
-            style="@style/social_icon"
+            style="@style/social_icon_styles"
             android:contentDescription="@string/facebook"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/twitterIcon"
@@ -91,7 +91,7 @@
         <!-- Icon: Twitter -->
         <ImageView
             android:id="@+id/twitterIcon"
-            style="@style/social_icon"
+            style="@style/social_icon_styles"
             android:contentDescription="@string/twitter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

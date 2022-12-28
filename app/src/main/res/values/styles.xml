@@ -43,7 +43,7 @@
     </style>
 
     <!-- Social Icon: Website, Facebook, Twitter -->
-    <style name="social_icon">
+    <style name="social_icon_styles">
         <item name="android:layout_width">@dimen/size_twenty_four</item>
         <item name="android:layout_height">@dimen/size_twenty_four</item>
         <item name="android:layout_marginEnd">@dimen/size_four</item>
@@ -129,7 +129,6 @@
         <item name="android:layout_height">@dimen/size_zero</item>
         <item name="android:layout_margin">@dimen/size_twenty_four</item>
         <item name="android:backgroundTint">@color/colorPrimary</item>
-        <item name="android:enabled">@{voterInfoViewModel.election != null}</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
