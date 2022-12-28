@@ -13,6 +13,10 @@ class LaunchFragment : Fragment() {
     private var _binding: FragmentLaunchBinding? = null
     private val binding get() = _binding!!
 
+    /**
+     * Inflates the layout with Data Binding, sets its lifecycle owner to the OverviewFragment to
+     * enable Data Binding to observe LiveData, and sets up the navigate the user based on the context.
+     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,7 +26,7 @@ class LaunchFragment : Fragment() {
         // Inflate view and obtain an instance of the binding class.
         _binding = FragmentLaunchBinding.inflate(inflater, container, false)
 
-        // viewLifeCycleOwner is used to observe LiveData
+        // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = viewLifecycleOwner
 
         // Button: Representatives
