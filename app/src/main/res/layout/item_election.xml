@@ -36,6 +36,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:text="@{election.name}"
+            android:textColor="@color/colorPrimaryLight"
+            android:textSize="19sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -49,11 +51,27 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:layout_marginBottom="12dp"
+            android:textSize="18sp"
             app:day="@{election.electionDay}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_election_name"
             tools:text="Tue Feb 02 00:00:00 EDT 2021"
             />
+
+        <View
+            android:id="@+id/div_date"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/colorSecondaryLight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/tv_election_name"
+            app:layout_constraintTop_toBottomOf="@id/date"
+            tools:layout_editor_absoluteY="16dp"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
