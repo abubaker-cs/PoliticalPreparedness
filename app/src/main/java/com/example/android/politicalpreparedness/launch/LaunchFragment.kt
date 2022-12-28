@@ -18,33 +18,32 @@ class LaunchFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        // Inflate view and obtain an instance of the binding class.
         _binding = FragmentLaunchBinding.inflate(inflater, container, false)
 
+        // viewLifeCycleOwner is used to observe LiveData
         binding.lifecycleOwner = viewLifecycleOwner
 
         // Button: Representatives
         binding.representativeButton.setOnClickListener {
-            navToRepresentatives()
+
+            // Open: Representatives Fragment
+            this.findNavController()
+                .navigate(LaunchFragmentDirections.actionLaunchFragmentToRepresentativeFragment())
+
         }
 
         // Button: Upcoming Elections
         binding.upcomingButton.setOnClickListener {
-            navToElections()
+
+            // Open: Elections Fragment
+            this.findNavController()
+                .navigate(LaunchFragmentDirections.actionLaunchFragmentToElectionsFragment())
+
         }
 
         return binding.root
-    }
-
-    // Open: Representatives Fragment
-    private fun navToRepresentatives() {
-        this.findNavController()
-            .navigate(LaunchFragmentDirections.actionLaunchFragmentToRepresentativeFragment())
-    }
-
-    // Open: Elections Fragment
-    private fun navToElections() {
-        this.findNavController()
-            .navigate(LaunchFragmentDirections.actionLaunchFragmentToElectionsFragment())
     }
 
     // This will avoid memory leaks
