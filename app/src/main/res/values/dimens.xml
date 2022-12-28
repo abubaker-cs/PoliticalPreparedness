@@ -4,7 +4,9 @@
     </dimen>
 
     <!-- Fixed Sizes (For: Fonts using "dp" unit) -->
+    <dimen name="size_three_hundreds">300dp</dimen>
     <dimen name="size_ninety_six">96dp</dimen>
+    <dimen name="size_eighty">80dp</dimen>
     <dimen name="size_sixty_four">64dp</dimen>
     <dimen name="size_thirty_six">36dp</dimen>
     <dimen name="size_thirty_two">32dp</dimen>

@@ -14,28 +14,19 @@
         <!-- DONE: Add image for home screen logo. -->
         <ImageView
             android:id="@+id/default_image"
+            style="@style/launch_logo"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:adjustViewBounds="true"
             android:contentDescription="@string/default_image_description"
             app:layout_constraintBottom_toTopOf="@+id/upcomingButton"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ballot_logo"
             />
 
-
         <!-- DONE: Add Button to navigate to upcoming elections. -->
         <Button
             android:id="@+id/upcomingButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="80dp"
-            android:backgroundTint="@color/colorPrimary"
+            style="@style/launch_btn_upcoming"
             android:text="@string/upcoming_elections"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,15 +35,8 @@
         <!-- DONE: Add Button to navigate to representatives. -->
         <Button
             android:id="@+id/representativeButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/colorSecondaryDark"
+            style="@style/launch_btn_find"
             android:text="@string/find_my_representatives"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
