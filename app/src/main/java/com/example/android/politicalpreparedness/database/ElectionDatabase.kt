@@ -11,17 +11,26 @@ import com.example.android.politicalpreparedness.network.models.Election
 @TypeConverters(Converters::class)
 abstract class ElectionDatabase : RoomDatabase() {
 
+    // electionDao to be used in the repository
     abstract val electionDao: ElectionDao
 
     companion object {
 
+        // Singleton prevents multiple instances of database opening at the same time.
         @Volatile
         private var INSTANCE: ElectionDatabase? = null
 
+
         fun getInstance(context: Context): ElectionDatabase {
+
             synchronized(this) {
+
                 var instance = INSTANCE
+
+                // If instance is null, make a new database instance.
                 if (instance == null) {
+
+                    // Create database here
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         ElectionDatabase::class.java,
@@ -30,10 +39,14 @@ abstract class ElectionDatabase : RoomDatabase() {
                         .fallbackToDestructiveMigration()
                         .build()
 
+                    // Assign INSTANCE to the newly created database.
                     INSTANCE = instance
+
                 }
 
+                // Return instance
                 return instance
+
             }
         }
 
