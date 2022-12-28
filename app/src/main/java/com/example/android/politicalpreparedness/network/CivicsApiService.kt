@@ -44,7 +44,7 @@ private val retrofit = Retrofit.Builder()
     // Add the CoroutineCallAdapterFactory
     .addCallAdapterFactory(CoroutineCallAdapterFactory())
 
-    // CivicsHttpClient is the client that will make the HTTP requests
+    // MAke the HTTP request, using the secrete API Key
     .client(CivicsHttpClient.getClient())
 
     // Set the base URL
@@ -76,6 +76,7 @@ interface CivicsApiService {
 
 }
 
+// It is a singleton object that can be used to access the CivicsApiService
 object CivicsApi {
     val retrofitService: CivicsApiService by lazy {
         retrofit.create(CivicsApiService::class.java)
