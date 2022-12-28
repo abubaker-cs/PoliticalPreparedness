@@ -28,7 +28,7 @@
         <!-- Main Heading: Election Information -->
         <TextView
             android:id="@+id/lbl_election_info"
-            style="@style/info_main_heading"
+            style="@style/view_main_heading"
             android:text="@string/election_information"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

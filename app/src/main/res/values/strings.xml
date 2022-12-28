@@ -20,7 +20,7 @@
     <string name="head_saved_elections">Saved Elections</string>
     <string name="header_representative_search">Representative Search</string>
     <string name="header_upcoming_elections">Upcoming Elections</string>
-    <string name="my_representatives">My Representatives</string>
+    <string name="my_representatives">Search Results:</string>
     <string name="status_error">Error when retrieving representatives</string>
     <string name="status_loading">Loading…</string>
     <string name="twitter">Twitter</string>
@@ -39,5 +39,6 @@
     <string name="election_ballot_information">Ballot Information</string>
     <string name="election_information">Election Information</string>
     <string name="placeholder_election_date">28 December 2022</string>
+    <string name="search_form">Search Form</string>
 
 </resources>

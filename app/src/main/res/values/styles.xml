@@ -78,6 +78,10 @@
         <item name="android:background">@color/colorSecondaryLight</item>
     </style>
 
+    <!--
+        Fragment: Election Information
+    -->
+
     <!-- Info: Sub-Heading -->
     <style name="info_sub_heading">
         <item name="android:layout_width">match_parent</item>
@@ -130,7 +134,7 @@
     </style>
 
     <!-- Info: Main Heading -->
-    <style name="info_main_heading">
+    <style name="view_main_heading">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/size_twenty_four</item>
@@ -138,5 +142,96 @@
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">24sp</item>
     </style>
+
+
+    <!--
+        Fragment: Search Representatives
+    -->
+
+    <!-- API Status -->
+    <style name="search_api_status">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- RecyclerView: Search Results -->
+    <style name="search_recyclerview_results">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_zero</item>
+        <item name="android:layout_marginHorizontal">@dimen/size_eight</item>
+        <item name="android:layout_marginTop">@dimen/size_twenty</item>
+    </style>
+
+    <!-- Heading: Search Results -->
+    <style name="search_results_heading">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/size_eight</item>
+        <item name="android:layout_marginTop">@dimen/text_twenty</item>
+        <item name="android:textColor">@color/colorSecondaryDark</item>
+        <item name="android:textSize">@dimen/text_twenty</item>
+    </style>
+
+    <!-- Container: Heading + Search Results -->
+    <style name="search_results_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_zero</item>
+    </style>
+
+    <!-- Button: Find Representatives -->
+    <style name="search_btn_find">
+        <item name="android:layout_marginHorizontal">@dimen/size_eight</item>
+        <item name="android:layout_marginTop">@dimen/size_eight</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_sixteen</item>
+    </style>
+
+    <!-- Button: Use GPS to find/fill my Address -->
+    <style name="search_btn_gps">
+        <item name="android:layout_marginHorizontal">@dimen/size_eight</item>
+        <item name="android:backgroundTint">@color/colorSecondaryLight</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_sixteen</item>
+    </style>
+
+    <!-- EditText: Address -->
+    <style name="search_edit_address">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/size_eight</item>
+        <item name="android:inputType">textPostalAddress</item>
+    </style>
+
+    <!-- EditText: City -->
+    <style name="search_edith_city">
+        <item name="android:layout_width">@dimen/size_zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/size_eight</item>
+        <item name="android:inputType">textPostalAddress</item>
+    </style>
+
+    <!-- Spinner: States -->
+    <style name="search_spinner_states">
+        <item name="android:layout_width">@dimen/size_zero</item>
+        <item name="android:layout_height">@dimen/size_zero</item>
+        <item name="android:layout_marginEnd">@dimen/size_zero</item>
+        <item name="android:entries">@array/states</item>
+        <item name="android:inputType">textPostalAddress</item>
+    </style>
+
+    <!-- EditText: Zip Code -->
+    <style name="search_postal_code">
+        <item name="android:layout_width">@dimen/size_zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/size_eight</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">5</item>
+    </style>
+
+    <!--
+    Fragment: Voter Info
+    -->
+
 
 </resources>
