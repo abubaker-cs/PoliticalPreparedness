@@ -144,17 +144,37 @@ fun fetchImage(view: ImageView, src: String?) {
 @BindingAdapter("apiStatus")
 fun TextView.setStatus(status: CivicsApiStatus?) {
     when (status) {
+
+        // Status: Loading
         CivicsApiStatus.LOADING -> {
+
+            // Set the text to "Loading..."
             text = resources.getString(R.string.status_loading)
+
         }
+
+        // Status: Error
         CivicsApiStatus.ERROR -> {
+
+            // DONE: Show the error message
             text = resources.getString(R.string.status_error)
+
         }
+
+        // Status: Done
         CivicsApiStatus.DONE -> {
+
+            // Set the text to an empty string
             text = ""
+
         }
+
+        // Else:
         else -> {
+
+            // Hide the visibility of the view
             visibility = View.INVISIBLE
+
         }
     }
 }
