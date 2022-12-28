@@ -1,5 +1,6 @@
 package com.example.android.politicalpreparedness.network
 
+import com.example.android.politicalpreparedness.utils.Constants.CIVICS_API_KEY
 import okhttp3.OkHttpClient
 
 class CivicsHttpClient : OkHttpClient() {
@@ -7,8 +8,7 @@ class CivicsHttpClient : OkHttpClient() {
     companion object {
 
         //DONE: Place your API Key Here
-        // private const val API_KEY = CIVICS_API_KEY
-        private const val API_KEY = "AIzaSyB_OAEuKO_bimjoNmnQYrtvz32nYRpeQtA"
+        private const val API_KEY = CIVICS_API_KEY
 
         fun getClient(): OkHttpClient {
 

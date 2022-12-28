@@ -5,6 +5,11 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Channel(
+
+    // Type
     val type: String,
+
+    // ID
     val id: String
+
 ) : Parcelable

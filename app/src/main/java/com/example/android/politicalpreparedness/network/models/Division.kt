@@ -5,7 +5,14 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Division(
+
+    // ID
     val id: String,
+
+    // Country
     val country: String,
+
+    // State
     val state: String
+
 ) : Parcelable

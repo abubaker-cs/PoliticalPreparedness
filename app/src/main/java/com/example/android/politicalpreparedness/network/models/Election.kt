@@ -9,8 +9,21 @@ import java.util.*
 
 @Entity(tableName = "election_table")
 data class Election(
-    @PrimaryKey val id: Int,
-    @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "electionDay") val electionDay: Date,
-    @Embedded(prefix = "division_") @Json(name = "ocdDivisionId") val division: Division
+
+    // Primary Key
+    @PrimaryKey
+    val id: Int,
+
+    // Name
+    @ColumnInfo(name = "name")
+    val name: String,
+
+    // Election Day
+    @ColumnInfo(name = "electionDay")
+    val electionDay: Date,
+
+    // Division
+    @Embedded(prefix = "division_") @Json(name = "ocdDivisionId")
+    val division: Division
+
 )
