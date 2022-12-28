@@ -12,6 +12,7 @@
             name="electionsViewModel"
             type="com.example.android.politicalpreparedness.election.ElectionsViewModel"
             />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,15 +25,8 @@
         <!-- Heading: Upcoming Elections -->
         <TextView
             android:id="@+id/header_upcoming_election"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/size_eight"
-            android:layout_marginTop="@dimen/size_twenty"
+            style="@style/election_heading"
             android:text="@string/header_upcoming_elections"
-            android:textAllCaps="true"
-            android:textColor="@color/colorSecondary"
-            android:textSize="@dimen/text_eighteen"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
@@ -40,13 +34,7 @@
         <!-- RecyclerView: Upcoming Elections -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_upcoming"
-            android:layout_width="@dimen/size_zero"
-            android:layout_height="@dimen/size_zero"
-            android:layout_marginHorizontal="@dimen/size_eight"
-            android:layout_marginTop="@dimen/size_sixteen"
-            android:clipToPadding="false"
-            android:orientation="vertical"
-            android:padding="@dimen/default_padding"
+            style="@style/elections_rv"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@id/header_saved_election"
             app:layout_constraintEnd_toEndOf="parent"
@@ -72,15 +60,8 @@
         <!-- Heading: Saved Elections -->
         <TextView
             android:id="@+id/header_saved_election"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="@dimen/size_twenty"
+            style="@style/election_heading"
             android:text="@string/head_saved_elections"
-            android:textAllCaps="true"
-            android:textColor="@color/colorSecondary"
-            android:textSize="@dimen/text_eighteen"
-            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/recycler_saved"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recycler_upcoming"
@@ -89,13 +70,7 @@
         <!-- RecyclerView: Saved Elections -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_saved"
-            android:layout_width="@dimen/size_zero"
-            android:layout_height="@dimen/size_zero"
-            android:layout_marginHorizontal="@dimen/size_eight"
-            android:layout_marginTop="@dimen/size_sixteen"
-            android:clipToPadding="false"
-            android:orientation="vertical"
-            android:padding="@dimen/size_eight"
+            style="@style/elections_rv"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
