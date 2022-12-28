@@ -19,6 +19,7 @@
     <dimen name="size_zero">0dp</dimen>
 
     <!-- Dynamic Sizes (For: Fonts using "sp" unit) -->
+    <dimen name="text_twenty_four">24sp</dimen>
     <dimen name="text_twenty_one">21sp</dimen>
     <dimen name="text_twenty">20sp</dimen>
     <dimen name="text_nineteen">19sp</dimen>

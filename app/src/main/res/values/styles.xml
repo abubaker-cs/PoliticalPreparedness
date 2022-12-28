@@ -78,4 +78,65 @@
         <item name="android:background">@color/colorSecondaryLight</item>
     </style>
 
+    <!-- Info: Sub-Heading -->
+    <style name="info_sub_heading">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="android:textSize">@dimen/text_sixteen</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Info: Web Links -->
+    <style name="info_weblinks">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/size_eight</item>
+        <item name="android:textColor">@color/colorURL</item>
+        <item name="android:textSize">@dimen/text_twenty_one</item>
+    </style>
+
+    <!-- Info: Election Date -->
+    <style name="info_election_date">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/size_eight</item>
+        <item name="android:textSize">@dimen/text_twenty_one</item>
+    </style>
+
+    <!-- Info: Divider - Election Information -->
+    <style name="info_election_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_one</item>
+        <item name="android:layout_marginTop">21dp</item>
+        <item name="android:background">@color/colorPrimaryLight</item>
+    </style>
+
+    <!-- Info: API Status -->
+    <style name="info_api_status">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Info: Follow/un-follow Button -->
+    <style name="info_btn_follow_unfollow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/size_zero</item>
+        <item name="android:layout_margin">@dimen/size_twenty_four</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:enabled">@{voterInfoViewModel.election != null}</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Info: Main Heading -->
+    <style name="info_main_heading">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/size_twenty_four</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
 </resources>
