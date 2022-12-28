@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="default_padding">8dp</dimen>
+    <dimen name="default_padding">8dp
+    </dimen>
+
+    <!-- Fixed Sizes (For: Fonts using "dp" unit) -->
+    <dimen name="size_ninety_six">96dp</dimen>
+    <dimen name="size_sixty_four">64dp</dimen>
+    <dimen name="size_thirty_two">32dp</dimen>
+    <dimen name="size_twenty_four">24dp</dimen>
+    <dimen name="size_twenty">20dp</dimen>
+    <dimen name="size_eighteen">18dp</dimen>
+    <dimen name="size_sixteen">16dp</dimen>
+    <dimen name="size_twelve">12dp</dimen>
+    <dimen name="size_eight">8dp</dimen>
+    <dimen name="size_four">4dp</dimen>
+    <dimen name="size_one">1dp</dimen>
+    <dimen name="size_zero">0dp</dimen>
+
+    <!-- Dynamic Sizes (For: Fonts using "sp" unit) -->
+    <dimen name="text_twenty_one">21sp</dimen>
+    <dimen name="text_twenty">20sp</dimen>
+    <dimen name="text_nineteen">19sp</dimen>
+    <dimen name="text_eighteen">18sp</dimen>
+    <dimen name="text_sixteen">16sp</dimen>
+
 </resources>

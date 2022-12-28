@@ -9,4 +9,73 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Avatar (Representative's image) -->
+    <style name="avatar">
+        <item name="android:layout_width">@dimen/size_sixty_four</item>
+        <item name="android:layout_height">@dimen/size_sixty_four</item>
+        <item name="android:layout_margin">@dimen/size_four</item>
+    </style>
+
+    <!-- Office Name -->
+    <style name="office_name">
+        <item name="android:layout_width">@dimen/size_zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/size_four</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Candidate's Name -->
+    <style name="candidate_name">
+        <item name="android:layout_width">@dimen/size_zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/size_four</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Candidate's Party -->
+    <style name="candidate_party">
+        <item name="android:layout_width">@dimen/size_zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/size_four</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+    </style>
+
+    <!-- Social Icon: Website, Facebook, Twitter -->
+    <style name="social_icon">
+        <item name="android:layout_width">@dimen/size_twenty_four</item>
+        <item name="android:layout_height">@dimen/size_twenty_four</item>
+        <item name="android:layout_marginEnd">@dimen/size_four</item>
+        <item name="android:contentDescription">@string/website</item>
+    </style>
+
+    <!-- Item - Election Name -->
+    <style name="item_election_name">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/size_eight</item>
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+        <item name="android:textSize">@dimen/text_nineteen</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Item - Election Date -->
+    <style name="item_election_date">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/size_eight</item>
+        <item name="android:layout_marginBottom">@dimen/size_twelve</item>
+        <item name="android:textSize">@dimen/size_eighteen</item>
+    </style>
+
+    <!-- Item - Election Divider -->
+    <style name="item_election_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_one</item>
+        <item name="android:layout_marginTop">@dimen/size_sixteen</item>
+        <item name="android:layout_marginBottom">@dimen/size_sixteen</item>
+        <item name="android:background">@color/colorSecondaryLight</item>
+    </style>
+
 </resources>

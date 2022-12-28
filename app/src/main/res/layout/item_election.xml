@@ -32,13 +32,8 @@
         <!-- Election Name -->
         <TextView
             android:id="@+id/tv_election_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
+            style="@style/item_election_name"
             android:text="@{election.name}"
-            android:textColor="@color/colorPrimaryLight"
-            android:textSize="19sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Election Name"
@@ -47,11 +42,7 @@
         <!-- Election Date -->
         <TextView
             android:id="@+id/date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginBottom="12dp"
-            android:textSize="18sp"
+            style="@style/item_election_date"
             app:day="@{election.electionDay}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_election_name"
@@ -60,11 +51,7 @@
 
         <View
             android:id="@+id/div_date"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@color/colorSecondaryLight"
+            style="@style/item_election_divider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@id/tv_election_name"

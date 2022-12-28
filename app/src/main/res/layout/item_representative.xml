@@ -25,9 +25,7 @@
         <!-- Candidate's Avatar -->
         <ImageView
             android:id="@+id/representativePhoto"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="4dp"
+            style="@style/avatar"
             android:contentDescription="@string/avatar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,13 +36,8 @@
         <!-- Office Name -->
         <TextView
             android:id="@+id/text_office_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="4dp"
+            style="@style/office_name"
             android:text="@{representative.office.name}"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/representativePhoto"
             app:layout_constraintTop_toTopOf="parent"
@@ -54,11 +47,8 @@
         <!-- Candidate Name -->
         <TextView
             android:id="@+id/text_official_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="4dp"
+            style="@style/candidate_name"
             android:text="@{representative.official.name}"
-            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@id/wwwIcon"
             app:layout_constraintStart_toEndOf="@id/representativePhoto"
             app:layout_constraintTop_toBottomOf="@id/text_office_name"
@@ -68,11 +58,8 @@
         <!-- Party -->
         <TextView
             android:id="@+id/text_official_party"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="4dp"
+            style="@style/candidate_party"
             android:text="@{representative.official.party}"
-            android:textColor="@color/colorSecondary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/wwwIcon"
             app:layout_constraintStart_toEndOf="@id/representativePhoto"
@@ -83,10 +70,7 @@
         <!-- Icon: Website -->
         <ImageView
             android:id="@+id/wwwIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="4dp"
-            android:contentDescription="@string/website"
+            style="@style/social_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/facebookIcon"
             app:layout_constraintTop_toTopOf="parent"
@@ -96,9 +80,7 @@
         <!-- Icon: Facebook -->
         <ImageView
             android:id="@+id/facebookIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="4dp"
+            style="@style/social_icon"
             android:contentDescription="@string/facebook"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/twitterIcon"
@@ -109,9 +91,7 @@
         <!-- Icon: Twitter -->
         <ImageView
             android:id="@+id/twitterIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="4dp"
+            style="@style/social_icon"
             android:contentDescription="@string/twitter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
