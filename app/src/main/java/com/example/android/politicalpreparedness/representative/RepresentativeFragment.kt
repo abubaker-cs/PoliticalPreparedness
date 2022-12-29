@@ -201,7 +201,7 @@ class DetailFragment : Fragment() {
 
             ?.map { address ->
 
-                // This will provide a fallback to the zipcode if the postal code is not available
+                // Note: this might be null, that's why I am using a default fallback value of 00000
                 val zipcode = if (address.postalCode == null) "00000" else address.postalCode
 
                 Address(
