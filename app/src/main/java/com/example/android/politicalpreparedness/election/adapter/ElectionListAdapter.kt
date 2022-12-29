@@ -29,17 +29,30 @@ class ElectionListAdapter(private val clickListener: ElectionListener) :
 
         //DONE: Add companion object to inflate ViewHolder (from)
         companion object {
+
             fun from(parent: ViewGroup): ElectionViewHolder {
+
+                // Inflate view and return ViewHolder
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = ItemElectionBinding.inflate(layoutInflater, parent, false)
                 return ElectionViewHolder(binding)
+
             }
+
         }
 
+        // Adding binding values
         fun bind(listener: ElectionListener, election: Election) {
+
+            // Election
             binding.election = election
+
+            // Election click listener
             binding.clickListener = listener
+
+            // executePendingBindings() is used to make sure that all the views are updated immediately
             binding.executePendingBindings()
+
         }
 
     }
@@ -104,7 +117,10 @@ class ElectionListAdapter(private val clickListener: ElectionListener) :
 
     //DONE: Create ElectionListener
     class ElectionListener(val clickListener: (election: Election) -> Unit) {
+
+        // onClick method for ElectionListener
         fun onClick(election: Election) = clickListener(election)
+
     }
 
 

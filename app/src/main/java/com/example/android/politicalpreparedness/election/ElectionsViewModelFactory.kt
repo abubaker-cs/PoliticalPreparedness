@@ -10,11 +10,19 @@ class ElectionsViewModelFactory(
     private val localDataSource: ElectionDao,
     private val remoteDataSource: CivicsApiService
 ) : ViewModelProvider.Factory {
+
     @Suppress("unchecked_cast")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
+
+        // If the model class is not the ElectionViewModel, throw an exception
         if (modelClass.isAssignableFrom(ElectionsViewModel::class.java)) {
+
+            // return ElectionViewModel() as T with the localDataSource and remoteDataSource
             return ElectionsViewModel(localDataSource, remoteDataSource) as T
+
         }
+
+        // Error: Unknown ViewModel class
         throw IllegalArgumentException("Unknown ViewModel class")
     }
 }

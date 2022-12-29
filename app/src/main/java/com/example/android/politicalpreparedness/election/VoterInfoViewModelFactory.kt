@@ -14,11 +14,16 @@ class VoterInfoViewModelFactory(
     @Suppress("unchecked_cast")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
 
+        // If the model class is not the VoterInfoViewModel, throw an exception
         if (modelClass.isAssignableFrom(VoterInfoViewModel::class.java)) {
+
+            // return VoterInfoViewModel() as T with the localDataSource and remoteDataSource
             return VoterInfoViewModel(localDataSource, remoteDataSource) as T
         }
 
+        // Error: Unknown ViewModel class
         throw IllegalArgumentException("Unknown ViewModel class")
+
     }
 
 }
