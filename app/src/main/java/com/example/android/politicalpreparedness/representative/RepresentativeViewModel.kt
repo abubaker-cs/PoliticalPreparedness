@@ -53,42 +53,60 @@ class RepresentativeViewModel(private val savedHandle: SavedStateHandle) : ViewM
 
      */
 
-    //DONE: Create function get address from geo location
+    //DONE: Create function to get list of representatives around the user's geo location
     fun getRepresentativesList(address: Address?) {
 
+        // Set the Civics API status to loading
         _apiStatus.value = CivicsApiStatus.LOADING
 
+        // viewModelScope is a coroutine scope tied to the lifecycle of the ViewModel
         viewModelScope.launch {
 
             _representatives.value = arrayListOf()
 
+            // If address is not null, then get the representatives
             if (address != null) {
 
+                // Get the representatives from the API
                 try {
 
+                    // Updated the value of _address
                     _address.value = address
+
+                    // apiServices.getRepresentatives is used to get the representatives from the API
                     val (offices, officials) = apiService.getRepresentatives(_address.value?.toFormattedString()!!)
 
+                    // offices.flatMap is a function that takes a list of offices and officials and
+                    // returns a list of representatives
                     _representatives.value =
                         offices.flatMap { office -> office.getRepresentatives(officials) }
 
+                    // saveHandle is a SavedStateHandle that is passed to the ViewModel
                     savedHandle["representatives"] = _representatives.value
 
+                    // Set the Civics API status to done
                     _apiStatus.value = CivicsApiStatus.DONE
 
                 } catch (e: Exception) {
+
+                    // Set the Civics API status to error
+                    _apiStatus.value = CivicsApiStatus.ERROR
+
+                    // Log error message using e.localizedMessage
+                    // Note: e.localizedMessage creates a localized description of this throwable.
                     Timber.e(
                         "Error: %s", e.localizedMessage
                     )
-                    _apiStatus.value = CivicsApiStatus.ERROR
+
                 }
             }
         }
 
     }
 
+
+    // gets the list of representatives based on user's geo-location
     fun getRepresentativesList() {
-        Timber.d("address: %s", _address.value)
         getRepresentativesList(_address.value)
     }
 
