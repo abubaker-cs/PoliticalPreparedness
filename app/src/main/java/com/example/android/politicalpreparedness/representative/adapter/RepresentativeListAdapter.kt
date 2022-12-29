@@ -21,13 +21,23 @@ import com.example.android.politicalpreparedness.representative.model.Representa
 class RepresentativeListAdapter :
     ListAdapter<Representative, RepresentativeViewHolder>(RepresentativeDiffCallback()) {
 
+    // Establish bindings between ViewHolder and Representative data
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepresentativeViewHolder {
+
+        // Create ViewHolder from item_representative.xml
         return RepresentativeViewHolder.from(parent)
+
     }
 
+    // Populate ViewHolder with Representative data
     override fun onBindViewHolder(holder: RepresentativeViewHolder, position: Int) {
+
+        // Get representative from list
         val item = getItem(position)
+
+        // Populate ViewHolder with representative data
         holder.bind(item)
+
     }
 }
 
@@ -40,7 +50,6 @@ class RepresentativeViewHolder(val binding: ItemRepresentativeBinding) :
     //DONE: Add companion object to inflate ViewHolder (from)
     companion object {
         fun from(parent: ViewGroup): RepresentativeViewHolder {
-
             val layoutInflater = LayoutInflater.from(parent.context)
             val binding = ItemRepresentativeBinding.inflate(layoutInflater, parent, false)
             return RepresentativeViewHolder(binding)
@@ -48,7 +57,11 @@ class RepresentativeViewHolder(val binding: ItemRepresentativeBinding) :
     }
 
     fun bind(item: Representative) {
+
+        // Populate view with representative data
         binding.representative = item
+
+        // Fallback image if no photo available
         binding.representativePhoto.setImageResource(R.drawable.ic_profile)
 
         //DONE: Show social links ** Hint: Use provided helper methods
@@ -61,46 +74,76 @@ class RepresentativeViewHolder(val binding: ItemRepresentativeBinding) :
             showWWWLinks(it)
         }
 
+        // executePendingBindings() is used to make sure that all the views are properly bound to the data
+        // before the RecyclerView tries to recycle them.
         binding.executePendingBindings()
+
     }
 
+    // Social Links: Facebook + Twitter
     private fun showSocialLinks(channels: List<Channel>) {
+
+        // URL: Facebook
         val facebookUrl = getFacebookUrl(channels)
         if (!facebookUrl.isNullOrBlank()) {
             enableLink(binding.facebookIcon, facebookUrl)
         }
 
+        // URL: Twitter
         val twitterUrl = getTwitterUrl(channels)
         if (!twitterUrl.isNullOrBlank()) {
             enableLink(binding.twitterIcon, twitterUrl)
         }
+
     }
 
+    // URL: Website
     private fun showWWWLinks(urls: List<String>) {
         enableLink(binding.wwwIcon, urls.first())
     }
 
+    // Retrieve: Facebook URL
     private fun getFacebookUrl(channels: List<Channel>): String? {
         return channels.filter { channel -> channel.type == "Facebook" }
             .map { channel -> "https://www.facebook.com/${channel.id}" }
             .firstOrNull()
     }
 
+    // Retrieve: Twitter URL
     private fun getTwitterUrl(channels: List<Channel>): String? {
         return channels.filter { channel -> channel.type == "Twitter" }
             .map { channel -> "https://www.twitter.com/${channel.id}" }
             .firstOrNull()
     }
 
+    // Enable: Social Link
     private fun enableLink(view: ImageView, url: String) {
+
+        // Show icon
         view.visibility = View.VISIBLE
-        view.setOnClickListener { setIntent(url) }
+
+        // Click listener for social links
+        view.setOnClickListener {
+
+            // Create intent to open URL in browser
+            setIntent(url)
+
+        }
+
     }
 
+    // Intent: Open clicked URL
     private fun setIntent(url: String) {
+
+        // Uri.parse() parses a URI string and converts it into a Uri object.
         val uri = Uri.parse(url)
+
+        // Intent.ACTION_VIEW is an action constant that indicates that the user wants to view a URI.
         val intent = Intent(ACTION_VIEW, uri)
+
+        // Start activity
         itemView.context.startActivity(intent)
+
     }
 
 }
