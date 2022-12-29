@@ -105,7 +105,7 @@ class RepresentativeViewModel(private val savedHandle: SavedStateHandle) : ViewM
     }
 
 
-    // gets the list of representatives based on user's geo-location
+    // gets the list of representatives from the API
     fun getRepresentativesList() {
         getRepresentativesList(_address.value)
     }
