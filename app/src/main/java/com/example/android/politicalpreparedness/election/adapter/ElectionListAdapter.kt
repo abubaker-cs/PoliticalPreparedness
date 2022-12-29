@@ -11,6 +11,8 @@ import com.example.android.politicalpreparedness.network.models.Election
 class ElectionListAdapter(private val clickListener: ElectionListener) :
     ListAdapter<Election, ElectionListAdapter.ElectionViewHolder>(ElectionDiffCallback()) {
 
+    // onCreateViewHolder is called when the RecyclerView needs a new ViewHolder of the given type
+    // to represent an item.
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ElectionViewHolder {
         return ElectionViewHolder.from(parent)
     }
