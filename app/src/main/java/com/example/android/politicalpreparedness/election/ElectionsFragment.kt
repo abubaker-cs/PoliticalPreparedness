@@ -26,6 +26,10 @@ class ElectionsFragment : Fragment() {
         )
     }
 
+    /**
+     * Inflates the layout with Data Binding, sets its lifecycle owner to the OverviewFragment to
+     * enable Data Binding to observe LiveData, and sets up the navigate the user based on the context.
+     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,14 +42,11 @@ class ElectionsFragment : Fragment() {
 
         binding.apply {
 
+            // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
             lifecycleOwner = viewLifecycleOwner
 
-            //DONE: Add ViewModel values and create ViewModel
+            // Set the ViewModel for databinding - this allows the bound layout access
             electionsViewModel = viewModel
-
-            //DONE: Link elections to voter info
-            //DONE: Initiate recycler adapters
-            //DONE: Populate recycler adapters
 
             // Upcoming Elections
             recyclerUpcoming.adapter = ElectionListAdapter(ElectionListAdapter.ElectionListener {
@@ -56,8 +57,10 @@ class ElectionsFragment : Fragment() {
             recyclerSaved.adapter = ElectionListAdapter(ElectionListAdapter.ElectionListener {
                 viewModel.displayVoterInfo(it)
             })
+
         }
 
+        // Observer: Navigate to VoterInfoFragment
         viewModel.navigateToVoterInfo.observe(viewLifecycleOwner) {
             if (null != it) {
                 navigateToDetailFragment(it)
@@ -71,17 +74,25 @@ class ElectionsFragment : Fragment() {
 
     //DONE: Refresh adapters when fragment loads
     override fun onResume() {
+
         super.onResume()
+
+        // Refresh the list of Saved Elections from the local database
         viewModel.refresh()
+
     }
 
+    // Navigate to VoterInfoFragment
     private fun navigateToDetailFragment(election: Election) {
+
+        // Goto: VoterInfoFragment with election ID and division
         this.findNavController().navigate(
             ElectionsFragmentDirections.actionElectionsFragmentToVoterInfoFragment(
                 election.id,
                 election.division
             )
         )
+
     }
 
     // This will avoid memory leaks

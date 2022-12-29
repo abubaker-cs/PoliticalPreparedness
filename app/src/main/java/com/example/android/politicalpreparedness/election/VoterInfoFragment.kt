@@ -28,18 +28,27 @@ class VoterInfoFragment : Fragment() {
         )
     }
 
-
+    /**
+     * Inflates the layout with Data Binding, sets its lifecycle owner to the OverviewFragment to
+     * enable Data Binding to observe LiveData, and sets up the navigate the user based on the context.
+     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
-        val voterInfoFragmentArgs =
-            VoterInfoFragmentArgs.fromBundle(
-                requireArguments()
-            )
+        /**
+        Hint: You will need to ensure proper data is provided from previous fragment.
+         */
+
+        // Retrieve arguments
+        val voterInfoFragmentArgs = VoterInfoFragmentArgs.fromBundle(requireArguments())
+
+        // Get: Election ID
         val electionId = voterInfoFragmentArgs.argElectionId
+
+        // Get: Division
         val division = voterInfoFragmentArgs.argDivision
 
 
@@ -47,55 +56,83 @@ class VoterInfoFragment : Fragment() {
         _binding = FragmentVoterInfoBinding.inflate(inflater, container, false)
 
         binding.apply {
+
+            // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
             lifecycleOwner = viewLifecycleOwner
+
+            // Set the ViewModel for databinding - this allows the bound layout access
             voterInfoViewModel = viewModel
+
         }
 
+        // getVoterInfo
         viewModel.getVoterInfo(electionId, division)
 
+        // Observer: API Status
         viewModel.apiStatus.observe(viewLifecycleOwner) {
+
+            // Display ErrorDialog if API Status is ERROR
             it?.let {
                 if (it == CivicsApiStatus.ERROR) showRequestErrorDialog()
             }
+
         }
-
-        viewModel.url.observe(viewLifecycleOwner) { it ->
-            it?.let {
-                loadUrl(it)
-                viewModel.navigateToUrlCompleted()
-            }
-        }
-        return binding.root
-
-        //DONE: Populate voter info -- hide views without provided data.
-        /**
-        Hint: You will need to ensure proper data is provided from previous fragment.
-         */
-
 
         //DONE: Handle loading of URLs
+        // Observer: URL (web links)
+        viewModel.url.observe(viewLifecycleOwner) { it ->
 
-        //DONE: Handle save button UI state
-        //DONE: Handle save button clicks
+            // Open URL in Browser
+            it?.let {
+
+                // Open URL in Browser
+                loadUrl(it)
+
+                // Done navigating
+                viewModel.navigateToUrlCompleted()
+            }
+
+        }
+
+        return binding.root
 
     }
 
     //DONE: Create method to load URL intents
     private fun showRequestErrorDialog() {
+
+        // Create an AlertDialog
         AlertDialog.Builder(requireContext())
+
+            // Title
             .setTitle("Error")
+
+            // Message
             .setMessage("The voter information can't be retrieved. Click OK to go back.")
+
+            // Button: Cancel (Hide it)
             .setCancelable(false)
+
+            // Button: OK
             .setPositiveButton("Ok") { dialog, _ ->
+
+                // Close the dialog
                 dialog.dismiss()
+
+                // Navigate back
                 this.findNavController().popBackStack()
+
             }.show()
     }
 
     private fun loadUrl(url: String) {
+
+        // Create an Intent to view the URL
         val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+
+        // Start the Intent
         startActivity(browserIntent)
-        // viewModel.navigateToUrlCompleted()
+
     }
 
     // This will avoid memory leaks
