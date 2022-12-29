@@ -41,5 +41,6 @@
     <string name="placeholder_election_date">28 December 2022</string>
     <string name="search_form">Search Form</string>
     <string name="api_status_upcoming">API Status indicator for upcoming elections</string>
+    <string name="txt_party_name">Party</string>
 
 </resources>

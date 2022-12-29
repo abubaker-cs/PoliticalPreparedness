@@ -47,7 +47,6 @@
         <item name="android:layout_width">@dimen/size_twenty_four</item>
         <item name="android:layout_height">@dimen/size_twenty_four</item>
         <item name="android:layout_marginEnd">@dimen/size_four</item>
-        <item name="android:contentDescription">@string/website</item>
     </style>
 
     <!-- Item - Election Name -->

@@ -64,13 +64,14 @@
             app:layout_constraintEnd_toStartOf="@id/wwwIcon"
             app:layout_constraintStart_toEndOf="@id/representativePhoto"
             app:layout_constraintTop_toBottomOf="@id/text_official_name"
-            tools:text="Party"
+            tools:text="@string/txt_party_name"
             />
 
         <!-- Icon: Website -->
         <ImageView
             android:id="@+id/wwwIcon"
             style="@style/social_icon_styles"
+            android:contentDescription="@string/website"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/facebookIcon"
             app:layout_constraintTop_toTopOf="parent"
